@@ -20,12 +20,12 @@ router.put("/:id", (req, res) => {
 		...req.body,
 		id: req.params.id,
 	});
-	res.status(product != undefined ? 200 : 404).end();
+	res.status(product != undefined ? 204 : 404).end();
 });
 
 router.delete("/:id", (req, res) => {
 	const product = productService.deleteProduct(req.params.id);
-	res.status(product != undefined ? 200 : 404).end();
+	res.status(product != undefined ? 204 : 404).end();
 });
 
 module.exports = router;
